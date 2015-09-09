@@ -51,6 +51,12 @@
     	  });
     	});
     	
+    	$("#fixed-header-drawer-exp").keyup(function(event){
+        if(event.keyCode == 13){
+          $("#fixed-header-drawer-exp").submit();
+        }
+      });
+    	
     </script>
   </body>
 </html>
