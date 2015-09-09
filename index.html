@@ -48,6 +48,7 @@
     	  var url = base_url.replace("$$$$", $("#fixed-header-drawer-exp").val());
     	  $.getJSON(url, function(data){
     	    $("#boxer").text(JSON.stringify(data[0].boundingbox));
+    	    map.panTo(L.latLng(data[0].lat, data[0].lon)).setZoom(10);
     	  });
     	});
     	
