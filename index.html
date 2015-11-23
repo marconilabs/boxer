@@ -47,7 +47,7 @@
     	  var base_url = "http://nominatim.openstreetmap.org/search/$$$$?format=json&addressdetails=1&limit=5";
     	  var url = base_url.replace("$$$$", $("#fixed-header-drawer-exp").val());
     	  $.getJSON(url, function(data){
-    	    var new_bbox = [data[0].boundingbox[2],data[0].boundingbox[0],data[0].boundingbox[3],data[0].boundingbox[1]];
+    	    var new_bbox = [parseFloat(data[0].boundingbox[2]),parseFloat(data[0].boundingbox[0]),parseFloat(data[0].boundingbox[3]),parseFloat(data[0].boundingbox[1])];
     	    $("#boxer").text(JSON.stringify(new_bbox));
     	    map.panTo(L.latLng(data[0].lat, data[0].lon)).setZoom(10);
     	  });
